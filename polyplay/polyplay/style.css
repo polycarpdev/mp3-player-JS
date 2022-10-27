@@ -1,0 +1,225 @@
+:root{ 
+	--maintext:black;
+	--secondarytext:#332a2ab7;
+
+	--maincolor:rgb(207, 205, 55);
+	--secondarycolor:rgb(19, 72, 151) ;
+	--bordercolor:#abbbd3;
+    --extra-color:brown;
+
+	--themedotborder:#f3eded;
+	--preview:rgba(221, 209, 209, 0.411);
+	--headerfont: 'Courier New', Courier, monospace;
+	--buttoncolor:rgb(173, 117, 11);
+
+	
+}
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Cinzel+Decorative&family=Monoton&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+#body{
+    height: 100vh;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    /* background-image: linear-gradient(10deg, 
+    rgb(207, 205, 55)24%,
+    rgb(106, 153, 224)94% ); */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+     background:linear-gradient(50deg, var(--extra-color),  rgb(106, 153, 224), var(--maincolor));
+	 animation: movinggradient 10s  infinite;
+	 background-size: 300%;
+}
+@keyframes movinggradient{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+#intro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+.tracklist{
+    margin: 0;
+    padding: auto;
+    
+
+}
+.tracklist a{
+    text-decoration: none;
+    color: aquamarine;
+}
+.tracklist a b{
+    color: var(--maintext);
+}
+h1, h4{
+    font-family: var(--headerfont);
+}
+.music-container{
+    background-color: rgba(17, 113, 197, 0.596);
+    border-radius: 15px;
+    box-shadow: 10px 10px 20px 0 rgba(10, 21, 11, 0.5);
+    display: flex;
+    padding: 20px 30px;
+    position: relative;
+    margin: 100px 0;
+    z-index: 10;
+
+}
+#logo{
+    width: 10%;
+    background:linear-gradient(50deg, var(--extra-color),  rgb(106, 153, 224), var(--maincolor));
+	 animation: movinggradient 5s  infinite;
+     background-size: 200%;
+     border-radius: 20px 0 20px 0;
+}
+
+.img-container{
+    position: relative;
+    width: 110px;
+}
+
+.img-container::after{
+    content: '';
+    background-color: var(--secondarycolor);
+    border: 2px solid white;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    left:50%;
+    bottom:50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    
+
+}
+.img-container img{
+    
+    width: inherit;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    
+    animation: polycarp 5s linear infinite;
+    animation-play-state: paused;
+}
+
+.music-container.play .img-container img{
+    animation-play-state: running;
+}
+
+@keyframes polycarp{
+    from{
+        transform: rotate(0deg);
+    }
+
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+.action-btn{
+    background-color: var(--themedotborder);
+    border: 0;
+    color: var(--buttoncolor);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px;
+    margin: 0 20px;
+
+}
+
+.action-btn-big{
+    color: rgb(172, 141, 85);
+    font-size: 30px;
+}
+
+.action-btn:focus{
+    outline: 0;
+}
+
+.music-info{
+    background-color: rgb(255, 255, 255, 0.5);
+    border-radius: 15px 15px 0 0;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width:60%;
+    opacity: 0.5;
+    transform: translateY(-95%);
+    padding: 10px 10px 10px 150px;
+    transition: 1s ease-in-out;
+}
+
+.music-info h3{
+    margin: 0;
+    color: var(--secondarytext);
+}
+.music-info h5{
+    color: var(--extra-color);
+}
+
+.music-container.play .music-info{
+    transition: 1s ease-in-out;
+    width:80%;
+    opacity: 1;
+    transform: translateY(-100%);
+    
+}
+
+.progress-container{
+    background: rgb(153, 132, 132, 0.3);
+    border-radius: 5px;
+    
+    cursor: pointer;
+    margin: 10px 0;
+    height: 4px;
+    width: 100%;
+}
+
+.volumeControl{
+    background-color: var(--preview);
+    transform: rotate(-90deg);
+    width: fit-content;
+    height: fit-content;
+    border-radius: 15%;
+    border: 1px solid var(--maintext);
+    margin-left: 130px;
+    
+}
+
+.progress{
+    background-color: rgb(42, 160, 71);
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    transition: width 0.1s linear;
+    
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>CarpPlayer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="cplogo.png" type="icon">
+
+    
+</head>
+<body id="body">
+   <section id="intro">
+    <img id="logo" src="cpicon.jpeg" alt="">
+    <h1>CarpPlayer</h1>
+</section>
+    <div class="music-container  ">
+
+        
+        <div class="music-info">
+            <h3 id="songtitle"> </h3>
+            <h5 class="artiste" id="artiste" > </h5>
+
+            <div class="progress-container"> 
+                 
+                <div class="progress">
+
+                </div>
+            </div>
+            
+        </div>
+
+        <audio  id="audio"></audio>
+
+        <div class="img-container">
+            <img src="/Uzuri Wako[Instrumental].jpg "  alt="Song Cover" id="cover">
+        </div>
+        <div class="nav">
+            <button id="prev" class="action-btn">
+                <i class="fas fa-backward"></i>
+            </button>
+
+            <button id="play" class="action-btn action-btn-big">
+                <i class="fas fa-play"></i>
+            </button>
+
+            <button id="next" class="action-btn">
+                <i class="fas fa-forward"></i>
+            </button>
+            
+        </div>
+        <div class="volumeControl">
+            <input type="range" value="50" min="0" max="99" onchange="vol()" id="changeVol">
+
+        </div>
+        
+    </div>
+    <div class="tracklist">
+        Streams: <b id="streams" >**not counting yet </b>    
+
+        <h4  > Tracklist </h4>
+        <ol>
+            <li> <b>Uzuri Wako(Instrumental) </b> - polycarp  </li>
+            <li> <b> Uzuri Wako </b> - polycarp, Markie  </li>
+        </ol>
+        
+        
+        
+        
+    </div>
+    <script src="js.js"></script>
+</body>
+</html>
